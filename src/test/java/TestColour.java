@@ -23,4 +23,16 @@ public class TestColour {
         });
         Assertions.assertEquals("RGB values must be between 0.0 and 1.0", RGBLessThanZero.getMessage());
     }
+
+    /**
+     * Test method to check that an IllegalArgumentException is thrown when any RGB value is greater than 1.
+     */
+    @Test
+    void RGBGreaterThanOne() {
+
+        Exception RGBGreaterThanOne = assertThrows(IllegalArgumentException.class, () -> {
+            Colour colour = new Colour(2, 0, 0);
+        });
+        Assertions.assertEquals("RGB values must be between 0.0 and 1.0", RGBGreaterThanOne.getMessage());
+    }
 }
