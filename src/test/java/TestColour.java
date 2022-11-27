@@ -10,7 +10,7 @@ import java.util.List;
  * The TestColour class will be used for test-driven development of the Colour class.
  */
 
-public class TestColour {
+class TestColour {
 
     /**
      * Test method to check that an IllegalArgumentException is thrown when any RGB value is less than 0.
@@ -21,7 +21,7 @@ public class TestColour {
         Exception RGBLessThanZero = assertThrows(IllegalArgumentException.class, () -> {
             Colour colour = new Colour(-1, 0, 0);
         });
-        Assertions.assertEquals("RGB values must be between 0.0 and 1.0", RGBLessThanZero.getMessage());
+        Assertions.assertEquals("RGB values must equal to or greater than 0.0", RGBLessThanZero.getMessage());
     }
 
     /**
@@ -33,6 +33,6 @@ public class TestColour {
         Exception RGBGreaterThanOne = assertThrows(IllegalArgumentException.class, () -> {
             Colour colour = new Colour(2, 0, 0);
         });
-        Assertions.assertEquals("RGB values must be between 0.0 and 1.0", RGBGreaterThanOne.getMessage());
+        Assertions.assertEquals("RGB values must be equal to or less than 1.0", RGBGreaterThanOne.getMessage());
     }
 }
