@@ -107,4 +107,16 @@ public class Colour {
         }
         this.blue = blue;
     }
+
+    /**
+     * Override method to check if two colours are equal.
+     * @param o The object to compare to.
+     * @return True if the colours are equal, false otherwise.
+     */
+
+    @Override
+    public boolean equals(Object o) {
+        Colour otherColour = (Colour) o;
+        return (this.red == otherColour.red && this.green == otherColour.green && this.blue == otherColour.blue);
+    }
 }
