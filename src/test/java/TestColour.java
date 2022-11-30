@@ -47,4 +47,15 @@ class TestColour {
         });
         Assertions.assertEquals("Invalid hex value", invalidHex.getMessage());
     }
+
+    /**
+     * Test method to check that override function to check for equal colours returns true.
+     */
+    @Test
+    void testEqual() {
+
+        Colour colour1 = new Colour(1.0F, 1.0F, 1.0F);
+        Colour colour2 = new Colour("FFFFFF");
+        Assertions.assertEquals(colour1, colour2);
+    }
 }
