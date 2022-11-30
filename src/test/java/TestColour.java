@@ -35,4 +35,16 @@ class TestColour {
         });
         Assertions.assertEquals("RGB values must be equal to or less than 1.0", RGBGreaterThanOne.getMessage());
     }
+
+    /**
+     * Test method to check that if a string is not a valid hex value, an IllegalArgumentException is thrown.
+     */
+    @Test
+    void invalidHex() {
+
+        Exception invalidHex = assertThrows(IllegalArgumentException.class, () -> {
+            Colour colour = new Colour("FF");
+        });
+        Assertions.assertEquals("Invalid hex value", invalidHex.getMessage());
+    }
 }
